@@ -1,0 +1,31 @@
+CHATBOT WITH RULE-BASED:
+
+import java.util.Scanner;
+
+public class RuleBasedChatbot {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Chatbot: Hi! I'm your simple chatbot. How can I help you today?");
+
+        while (true) {
+            System.out.print("You: ");
+            String userInput = scanner.nextLine().toLowerCase();
+
+            // Rule-based responses
+            if (userInput.contains("hello") || userInput.contains("hi")) {
+                System.out.println("Chatbot: Hello! How are you doing today?");
+            } else if (userInput.contains("how are you")) {
+                System.out.println("Chatbot: I'm just a program, but I'm functioning as expected! How about you?");
+            } else if (userInput.contains("what is your name")) {
+                System.out.println("Chatbot: I'm a simple rule-based chatbot. I don't have a specific name.");
+            } else if (userInput.contains("bye") || userInput.contains("goodbye")) {
+                System.out.println("Chatbot: Goodbye! Have a great day!");
+                break;
+            } else {
+                System.out.println("Chatbot: I'm sorry, I don't understand that. Can you please rephrase?");
+            }
+        }
+
+      
+    }
+}
