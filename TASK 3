@@ -1,0 +1,32 @@
+RECOMMENDATION SYSTEM:
+
+import java.util.*;
+
+public class ContentBasedRecommendationSystem {
+    public static void main(String[] args) {
+        // Sample data: Movie titles and their genres
+        Map<String, String> movies = new HashMap<>();
+        movies.put("Inception", "Sci-Fi");
+        movies.put("The Dark Knight", "Action");
+        movies.put("Interstellar", "Sci-Fi");
+        movies.put("Gladiator", "Action");
+        movies.put("The Matrix", "Sci-Fi");
+        movies.put("Titanic", "Romance");
+        movies.put("The Notebook", "Romance");
+        movies.put("Braveheart", "Action");
+
+        // User input: Preferred genre
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter your preferred genre (e.g., Sci-Fi, Action, Romance): ");
+        String preferredGenre = scanner.nextLine();
+
+        // Recommend movies based on the preferred genre
+        System.out.println("Recommended movies for the genre '" + preferredGenre + "':");
+        for (Map.Entry<String, String> entry : movies.entrySet()) {
+            if (entry.getValue().equalsIgnoreCase(preferredGenre)) {
+                System.out.println("- " + entry.getKey());
+            }
+        }
+
+    }
+}
